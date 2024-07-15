@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/admin/logout", {
+      .get("https://lobster-app-22b6m.ondigitalocean.app/api/v1/user/admin/logout", {
         withCredentials: true,
       })
       .then((res) => {

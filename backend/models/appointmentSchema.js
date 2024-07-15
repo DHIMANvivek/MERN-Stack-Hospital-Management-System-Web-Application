@@ -10,8 +10,8 @@ const appointmentSchema = new mongoose.Schema({
   },
   lastName: {
     type: String,
-    required: [true, "Last Name Is Required!"],
-    minLength: [3, "Last Name Must Contain At Least 3 Characters!"],
+    // required: [false, "Last Name Is Required!"],
+    // minLength: [3, "Last Name Must Contain At Least 3 Characters!"],
   },
   email: {
     type: String,
@@ -21,59 +21,63 @@ const appointmentSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: [true, "Phone Is Required!"],
-    minLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
-    maxLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
+    minLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
+    maxLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
   },
-  nic: {
-    type: String,
-    required: [true, "NIC Is Required!"],
-    minLength: [13, "NIC Must Contain Only 13 Digits!"],
-    maxLength: [13, "NIC Must Contain Only 13 Digits!"],
-  },
+  // nic: {
+  //   type: String,
+  //   required: [true, "NIC Is Required!"],
+  //   minLength: [13, "NIC Must Contain Only 13 Digits!"],
+  //   maxLength: [13, "NIC Must Contain Only 13 Digits!"],
+  // },
   dob: {
     type: Date,
-    required: [true, "DOB Is Required!"],
+    required: [false, "DOB Is Required!"],
   },
-  gender: {
+  age: {
     type: String,
-    required: [true, "Gender Is Required!"],
-    enum: ["Male", "Female"],
+    required: [true, "Age Is Required!"],
   },
+  // gender: {
+  //   type: String,
+  //   required: [true, "Gender Is Required!"],
+  //   enum: ["Male", "Female"],
+  // },
   appointment_date: {
     type: String,
     required: [true, "Appointment Date Is Required!"],
   },
-  department: {
-    type: String,
-    required: [true, "Department Name Is Required!"],
-  },
-  doctor: {
-    firstName: {
-      type: String,
-      required: [true, "Doctor Name Is Required!"],
-    },
-    lastName: {
-      type: String,
-      required: [true, "Doctor Name Is Required!"],
-    },
-  },
-  hasVisited: {
-    type: Boolean,
-    default: false,
-  },
+  // department: {
+  //   type: String,
+  //   required: [true, "Department Name Is Required!"],
+  // },
+  // doctor: {
+  //   firstName: {
+  //     type: String,
+  //     required: [true, "Doctor Name Is Required!"],
+  //   },
+  //   lastName: {
+  //     type: String,
+  //     required: [true, "Doctor Name Is Required!"],
+  //   },
+  // },
+  // hasVisited: {
+  //   type: Boolean,
+  //   default: false,
+  // },
   address: {
     type: String,
     required: [true, "Address Is Required!"],
   },
-  doctorId: {
-    type: mongoose.Schema.ObjectId,
-    required: [true, "Doctor Id Is Invalid!"],
-  },
-  patientId: {
-    type: mongoose.Schema.ObjectId,
-    ref: "User",
-    required: [true, "Patient Id Is Required!"],
-  },
+  // doctorId: {
+  //   type: mongoose.Schema.ObjectId,
+  //   required: [true, "Doctor Id Is Invalid!"],
+  // },
+  // patientId: {
+  //   type: mongoose.Schema.ObjectId,
+  //   ref: "User",
+  //   required: [true, "Patient Id Is Required!"],
+  // },
   status: {
     type: String,
     enum: ["Pending", "Accepted", "Rejected"],

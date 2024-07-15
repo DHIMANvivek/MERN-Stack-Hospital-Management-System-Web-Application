@@ -74,10 +74,10 @@ const Dashboard = () => {
             <p>Total Appointments</p>
             <h3>1500</h3>
           </div>
-          <div className="thirdBox">
+          {/* <div className="thirdBox">
             <p>Registered Doctors</p>
             <h3>10</h3>
-          </div>
+          </div> */}
         </div>
         <div className="banner">
           <h5>Appointments</h5>
@@ -97,9 +97,9 @@ const Dashboard = () => {
                 ? appointments.map((appointment) => (
                     <tr key={appointment._id}>
                       <td>{`${appointment.firstName} ${appointment.lastName}`}</td>
-                      <td>{appointment.appointment_date.substring(0, 16)}</td>
-                      <td>{`${appointment.doctor.firstName} ${appointment.doctor.lastName}`}</td>
-                      <td>{appointment.department}</td>
+                      {/* <td>{appointment.appointment_date.substring(0, 16)}</td> */}
+                      {/* <td>{`${appointment.doctor.firstName} ${appointment.doctor.lastName}`}</td> */}
+                      {/* <td>{appointment.department}</td> */}
                       <td>
                         <select
                           className={
